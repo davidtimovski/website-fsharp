@@ -55,11 +55,11 @@ let layout (content: XmlNode list, pageTitle: string, activeNavItem: ActiveNavIt
                    _href "/css/main.css" ]
 #else
             link [ _rel  "preload"
-                   _href "/css/style.min.css"
+                   _href "/css/style.min.css?v=2"
                    _as "style" ]
             link [ _rel  "stylesheet"
                    _type "text/css"
-                   _href "/css/style.min.css" ]
+                   _href "/css/style.min.css?v=2" ]
 #endif
             ]
 
