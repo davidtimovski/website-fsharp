@@ -32,8 +32,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebRoot\downloads\sapphire-notes\" />
-    <Folder Include="WebRoot\images\" />
-  </ItemGroup>
 </Project>
