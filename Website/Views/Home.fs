@@ -443,9 +443,12 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
+                                let appVersion = "0.2.0"
+                                let releaseDate = "23-Jan-2021"
+
                                 div [ _class "download-table-title" ] [
-                                    div [] [ rawText "Version 0.1.0" ]
-                                    div [ _class "release-date" ] [ rawText "10-Dec-2020" ]
+                                    div [] [ rawText $"Version {appVersion}" ]
+                                    div [ _class "release-date" ] [ rawText releaseDate ]
                                 ]
 
                                 table [] [
@@ -463,7 +466,7 @@ let sapphireNotes =
                                             td [] [ rawText "Windows" ]
                                             td [] [ rawText "64-bit" ]
                                             td [] [
-                                                a [ _href "https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_0.1.0_win64_setup.exe" ] [ rawText "sapphire-notes_0.1.0_win64_setup.exe" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_win64_setup.exe" ] [ rawText $"sapphire-notes_{appVersion}_win64_setup.exe" ]
                                             ]
                                             td [] [ rawText "29 MB" ]
                                         ]
@@ -474,16 +477,16 @@ let sapphireNotes =
                                             td [ _rowspan "2" ] [ rawText "Debian, Ubuntu" ]
                                             td [] [ rawText "64-bit" ]
                                             td [] [
-                                                a [ _href "https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_0.1.0_amd64.deb" ] [ rawText "sapphire-notes_0.1.0_amd64.deb" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_amd64.deb" ] [ rawText $"sapphire-notes_{appVersion}_amd64.deb" ]
                                             ]
-                                            td [] [ rawText "20 MB" ]
+                                            td [] [ rawText "18 MB" ]
                                         ]
                                         tr [] [
                                             td [] [ rawText "ARM" ]
                                             td [] [
-                                                a [ _href "https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_0.1.0_armhf.deb" ] [ rawText "sapphire-notes_0.1.0_armhf.deb" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_armhf.deb" ] [ rawText $"sapphire-notes_{appVersion}_armhf.deb" ]
                                             ]
-                                            td [] [ rawText "20 MB" ]
+                                            td [] [ rawText "17 MB" ]
                                         ]
                                     ]
                                 ]
