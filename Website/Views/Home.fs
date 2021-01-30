@@ -423,16 +423,17 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
-                                p [] [ rawText "Create and manage notes." ]
+                                p [] [ rawText "Create and manage notes. Wow!" ]
                                 p [] [
                                     span [] [ rawText "All of them are stored as simple " ]
                                     code [ _class "inline-code" ] [ rawText ".txt" ]
-                                    span [] [ rawText " files so if you decide to stop using the app you'll still have your notes in a format you can use anywhere." ]
+                                    span [] [ rawText " files so if you decide to stop using the app you'll still have your notes in a format you can use anywhere, even on a Mac." ]
                                 ]
-                                p [] [ rawText "The application auto-saves in frequent intervals and also when closed, so you won't have to do Ctrl/Command+S (even though you may be compelled to)." ]
+                                p [] [ rawText "The application auto-saves in frequent intervals and also when closed, so you won't have to do Ctrl/Command+S. You probably still will though because of habit." ]
                                 p [] [ rawText "Easily archive notes you're currently not using." ]
                                 p [] [ rawText "Where the notes are stored is your choice. If you want them to be backed up you can simply choose your OneDrive or DropBox folder as the storage location and voilà, cloud backup!" ]
-                                p [] [ rawText "There are many hotkeys and actions that can improve your efficiency in using the app. Check them out in the Tips window." ]
+                                p [] [ rawText "Pick from a wide range of 2 themes: Dark and Cosmos. Soon to be more, maybe!" ]
+                                p [] [ rawText "There are many hotkeys and actions that can improve your efficiency in using the app and make you feel like a hax0r. Check them out in Help -> Tips." ]
                             ]
                         ]
                     ]
@@ -443,8 +444,8 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
-                                let appVersion = "0.2.0"
-                                let releaseDate = "23-Jan-2021"
+                                let appVersion = "0.3.0"
+                                let releaseDate = "30-Jan-2021"
 
                                 div [ _class "download-table-title" ] [
                                     div [] [ rawText $"Version {appVersion}" ]
@@ -468,7 +469,7 @@ let sapphireNotes =
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_win64_setup.exe" ] [ rawText $"sapphire-notes_{appVersion}_win64_setup.exe" ]
                                             ]
-                                            td [] [ rawText "29 MB" ]
+                                            td [] [ rawText "35 MB" ]
                                         ]
                                     ]
 
@@ -479,14 +480,14 @@ let sapphireNotes =
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_amd64.deb" ] [ rawText $"sapphire-notes_{appVersion}_amd64.deb" ]
                                             ]
-                                            td [] [ rawText "18 MB" ]
+                                            td [] [ rawText "23 MB" ]
                                         ]
                                         tr [] [
                                             td [] [ rawText "ARM" ]
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_armhf.deb" ] [ rawText $"sapphire-notes_{appVersion}_armhf.deb" ]
                                             ]
-                                            td [] [ rawText "17 MB" ]
+                                            td [] [ rawText "22 MB" ]
                                         ]
                                     ]
                                 ]
