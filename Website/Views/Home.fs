@@ -142,6 +142,72 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
+                                    a [ _href "https://learningally.org/" ] [ rawText "Learning Ally" ]
+                                ]
+                                div [ _class "date" ] [ rawText "May, 2021 - Present" ]
+                            ]
+                        
+                            div [ _class "tech-list" ] [
+                                h4 [] [ rawText "Tech" ]
+                                p [] [
+                                    span [ _class "item" ] [ rawText "C#" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "WCF" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "SQL Server" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "Entity Framework" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "SVN" ]
+                                ]
+                            ]
+                        
+                            div [ _class "description" ] [
+                                p [] [ rawText "Will clarify in due time." ]
+                            ]
+                        ]
+                        
+                        hr [ _class "section-separator" ]
+
+                        div [ _class "section-item" ] [
+                            div [ _class "title-and-date" ] [
+                                div [ _class "title" ] [
+                                    a [ _href "https://www.kaloncreative.com/" ] [ rawText "Kalon Creative" ]
+                                ]
+                                div [ _class "date" ] [ rawText "January, 2021 - May, 2021" ]
+                            ]
+                        
+                            div [ _class "tech-list" ] [
+                                h4 [] [ rawText "Tech" ]
+                                p [] [
+                                    span [ _class "item" ] [ rawText "C#" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "ASP.NET" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "SQL Server" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "Entity Framework" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "JavaScript" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "jQuery" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "Git" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "Jira" ]
+                                ]
+                            ]
+                        
+                            div [ _class "description" ] [
+                                p [] [ rawText "Worked mostly on adding functionality to a large web application that deals with organizing and managing events, including virtual (live stream) ones." ]
+                            ]
+                        ]
+                        
+                        hr [ _class "section-separator" ]
+
+                        div [ _class "section-item" ] [
+                            div [ _class "title-and-date" ] [
+                                div [ _class "title" ] [
                                     a [ _href "https://perceptivesol.com/" ] [ rawText "Perceptive Solutions (WoundZoom)" ]
                                 ]
                                 div [ _class "date" ] [ rawText "August, 2020 - December, 2020" ]

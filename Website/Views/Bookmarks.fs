@@ -31,6 +31,7 @@ let view (model : List<Bookmark>) =
                                     | BookmarkType.Article -> i [ _class "icon-file-text" ] []
                                     | BookmarkType.Video -> i [ _class "icon-play-circle" ] []
                                     | BookmarkType.Tool -> i [ _class "icon-briefcase" ] []
+                                    | _ -> ()
 
                                     span [] [ str bookmark.Title ]    
                                     span [ _class "author" ] [ str bookmark.Author ]
