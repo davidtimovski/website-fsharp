@@ -21,8 +21,6 @@ let layout (content: XmlNode list, pageTitle: string, activeNavItem: ActiveNavIt
             meta [ _charset "utf-8" ]
             meta [ _name "viewport"
                    _content "width=device-width, initial-scale=1.0" ]
-            meta [ _name "google-site-verification"
-                   _content "17RRbP81BHFtIxOvAMrm87BdWATSWAQ3kIcwKzW9ZCw" ]
             
             link [ _rel "icon" 
                    _href "/favicon.png" ]

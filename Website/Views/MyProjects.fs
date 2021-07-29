@@ -151,6 +151,49 @@ let index =
 
                             div [ _class "section-item" ] [
                                 div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "Metronome" ]
+                                    div [ _class "date" ] [ rawText "July, 2021" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "Finally, a metronome that allows you to create and manage multiple tempos" ]
+
+                                div [ _class "tech-list" ] [
+                                    h4 [] [ rawText "Tech" ]
+                                    p [] [
+                                        span [ _class "item" ] [ rawText "TypeScript" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "Svelte" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "SASS" ]
+                                    ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "https://metronome.website"
+                                            _title "Check it out"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-external-link-square" ] []
+                                            span [] [ rawText "metronome.website" ]
+                                        ]
+                                    ]
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/metronome"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+
+                            hr [ _class "section-separator" ]
+
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
                                     div [ _class "title" ] [ rawText "Compound Interest Calculator" ]
                                     div [ _class "date" ] [ rawText "January, 2020" ]
                                 ]
