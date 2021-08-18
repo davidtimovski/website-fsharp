@@ -510,8 +510,8 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
-                                let appVersion = "0.4.0"
-                                let releaseDate = "01-Feb-2021"
+                                let appVersion = "0.5.0"
+                                let releaseDate = "18-Aug-2021"
 
                                 div [ _class "download-table-title" ] [
                                     div [] [ rawText $"Version {appVersion}" ]
@@ -535,7 +535,7 @@ let sapphireNotes =
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_win64_setup.exe" ] [ rawText $"sapphire-notes_{appVersion}_win64_setup.exe" ]
                                             ]
-                                            td [] [ rawText "33 MB" ]
+                                            td [] [ rawText "32 MB" ]
                                         ]
                                     ]
 
@@ -546,14 +546,14 @@ let sapphireNotes =
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_amd64.deb" ] [ rawText $"sapphire-notes_{appVersion}_amd64.deb" ]
                                             ]
-                                            td [] [ rawText "21 MB" ]
+                                            td [] [ rawText "20 MB" ]
                                         ]
                                         tr [] [
                                             td [] [ rawText "ARM" ]
                                             td [] [
                                                 a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_armhf.deb" ] [ rawText $"sapphire-notes_{appVersion}_armhf.deb" ]
                                             ]
-                                            td [] [ rawText "20 MB" ]
+                                            td [] [ rawText "19 MB" ]
                                         ]
                                     ]
                                 ]
