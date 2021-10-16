@@ -498,7 +498,6 @@ let sapphireNotes =
                                 p [] [ rawText "The application auto-saves in frequent intervals and also when closed, so you won't have to do Ctrl/Command+S. You probably still will though because of habit." ]
                                 p [] [ rawText "Easily archive notes you're currently not using." ]
                                 p [] [ rawText "Where the notes are stored is your choice. If you want them to be backed up you can simply choose your OneDrive or DropBox folder as the storage location and voilà, cloud backup!" ]
-                                p [] [ rawText "Pick from a wide range of 2 themes: Dark and Cosmos. Soon to be more, maybe!" ]
                                 p [] [ rawText "There are many hotkeys and actions that can improve your efficiency in using the app and make you feel like a hax0r. Check them out in Help -> Tips." ]
                             ]
                         ]
@@ -510,8 +509,8 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
-                                let appVersion = "0.5.0"
-                                let releaseDate = "18-Aug-2021"
+                                let appVersion = "0.6.0"
+                                let releaseDate = "16-Oct-2021"
 
                                 div [ _class "download-table-title" ] [
                                     div [] [ rawText $"Version {appVersion}" ]

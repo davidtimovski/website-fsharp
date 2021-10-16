@@ -9,9 +9,9 @@
     <PackageReference Include="Dapper" Version="2.0.90" />
     <PackageReference Include="Giraffe" Version="5.0.0" />
     <PackageReference Include="Giraffe.ViewEngine" Version="1.4.0" />
-    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.18.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
-    <PackageReference Include="Npgsql" Version="5.0.7" />
+    <PackageReference Include="Npgsql" Version="5.0.10" />
     <PackageReference Include="Ply" Version="0.3.*" />
   </ItemGroup>
   <ItemGroup>
