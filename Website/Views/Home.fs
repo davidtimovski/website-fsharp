@@ -1,6 +1,7 @@
 module DavidTimovskiWebsite.Views.Home
 
 open Giraffe.ViewEngine
+open DavidTimovskiWebsite.Models
 open DavidTimovskiWebsite.Views.Layout
 
 let index =
@@ -456,7 +457,7 @@ let index =
     ], "Home", Home) |> layout
 
 
-let sapphireNotes =
+let sapphireNotes (model : SapphireNotesViewModel) =
     let pageTitle = "Sapphire Notes"
 
     ([
@@ -509,12 +510,9 @@ let sapphireNotes =
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
-                                let appVersion = "0.6.0"
-                                let releaseDate = "16-Oct-2021"
-
                                 div [ _class "download-table-title" ] [
-                                    div [] [ rawText $"Version {appVersion}" ]
-                                    div [ _class "release-date" ] [ rawText releaseDate ]
+                                    div [] [ rawText $"Version {model.Version}" ]
+                                    div [ _class "release-date" ] [ rawText model.ReleaseDate ]
                                 ]
 
                                 table [] [
@@ -532,9 +530,9 @@ let sapphireNotes =
                                             td [] [ rawText "Windows" ]
                                             td [] [ rawText "64-bit" ]
                                             td [] [
-                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_win64_setup.exe" ] [ rawText $"sapphire-notes_{appVersion}_win64_setup.exe" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{model.Version}_win64_setup.exe" ] [ rawText $"sapphire-notes_{model.Version}_win64_setup.exe" ]
                                             ]
-                                            td [] [ rawText "32 MB" ]
+                                            td [] [ rawText model.WindowsFileSize ]
                                         ]
                                     ]
 
@@ -543,16 +541,16 @@ let sapphireNotes =
                                             td [ _rowspan "2" ] [ rawText "Debian, Ubuntu" ]
                                             td [] [ rawText "64-bit" ]
                                             td [] [
-                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_amd64.deb" ] [ rawText $"sapphire-notes_{appVersion}_amd64.deb" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{model.Version}_amd64.deb" ] [ rawText $"sapphire-notes_{model.Version}_amd64.deb" ]
                                             ]
-                                            td [] [ rawText "20 MB" ]
+                                            td [] [ rawText model.DebianUbuntu64FileSize ]
                                         ]
                                         tr [] [
                                             td [] [ rawText "ARM" ]
                                             td [] [
-                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{appVersion}_armhf.deb" ] [ rawText $"sapphire-notes_{appVersion}_armhf.deb" ]
+                                                a [ _href $"https://www.davidtimovski.com/downloads/sapphire-notes/sapphire-notes_{model.Version}_armhf.deb" ] [ rawText $"sapphire-notes_{model.Version}_armhf.deb" ]
                                             ]
-                                            td [] [ rawText "19 MB" ]
+                                            td [] [ rawText model.DebianUbuntuARMFileSize ]
                                         ]
                                     ]
                                 ]

@@ -37,6 +37,14 @@ let private toPostViewModel (post: Post) (previousPost: Post) (nextPost: Post) =
     PostViewModel(post.Title, post.Body, post.DateCreated.ToString("dd MMMM yyyy"), previousPostId, previousPostTitle, nextPostId, nextPostTitle)
 
 
+let sapphireNotesHandler : HttpHandler =
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        let configuration = ctx.GetService<IConfiguration>()
+        let viewModel = configuration.GetSection("SapphireNotes").Get<SapphireNotesViewModel>()
+
+        let view = Home.sapphireNotes viewModel
+        htmlView view next ctx
+
 let blogHandler : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
         let conn = getConnection ctx
@@ -44,9 +52,9 @@ let blogHandler : HttpHandler =
         let previousPost = BlogPostsRepository.getPrevious post.DateCreated conn
         let nextPost = BlogPostsRepository.getNext post.DateCreated conn
 
-        let postViewModel = toPostViewModel post previousPost nextPost
+        let viewModel = toPostViewModel post previousPost nextPost
 
-        let view = Blog.view postViewModel
+        let view = Blog.view viewModel
         htmlView view next ctx
 
 let blogWithParamHandler (id : int) : HttpHandler =
@@ -96,7 +104,7 @@ let webApp : (HttpFunc -> HttpContext -> HttpFuncResult) =
         GET >=>
             choose [
                 route "/" >=> weekResponseCaching >=> (htmlView Home.index)
-                route "/sapphire-notes" >=> weekResponseCaching >=> (htmlView Home.sapphireNotes)
+                route "/sapphire-notes" >=> sapphireNotesHandler
                 route "/my-projects" >=> weekResponseCaching >=> (htmlView MyProjects.index)
                 route "/my-projects/temporal" >=> weekResponseCaching >=> (htmlView MyProjects.temporal)
                 route "/blog" >=> blogHandler

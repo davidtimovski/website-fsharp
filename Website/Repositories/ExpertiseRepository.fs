@@ -4,7 +4,7 @@ open Dapper
 open Npgsql
 open Models
 
-let getAll(connection:NpgsqlConnection) =
+let getAll(connection : NpgsqlConnection) =
     let expertise = 
         connection.Query<Expertise> @"SELECT * FROM ""Expertise"""
         |> Seq.toList
