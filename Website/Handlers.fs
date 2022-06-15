@@ -42,7 +42,15 @@ let sapphireNotesHandler : HttpHandler =
         let configuration = ctx.GetService<IConfiguration>()
         let viewModel = configuration.GetSection("SapphireNotes").Get<SapphireNotesViewModel>()
 
-        let view = Home.sapphireNotes viewModel
+        let view = Home.SapphireNotes.sapphireNotes viewModel
+        htmlView view next ctx
+
+let teamSketchHandler : HttpHandler =
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        let configuration = ctx.GetService<IConfiguration>()
+        let viewModel = configuration.GetSection("TeamSketch").Get<TeamSketchViewModel>()
+
+        let view = Home.TeamSketch.teamSketch viewModel
         htmlView view next ctx
 
 let blogHandler : HttpHandler =
@@ -103,8 +111,9 @@ let webApp : (HttpFunc -> HttpContext -> HttpFuncResult) =
     choose [
         GET >=>
             choose [
-                route "/" >=> weekResponseCaching >=> (htmlView Home.index)
+                route "/" >=> weekResponseCaching >=> (htmlView Home.Index.index)
                 route "/sapphire-notes" >=> sapphireNotesHandler
+                route "/team-sketch" >=> teamSketchHandler
                 route "/my-projects" >=> weekResponseCaching >=> (htmlView MyProjects.index)
                 route "/my-projects/temporal" >=> weekResponseCaching >=> (htmlView MyProjects.temporal)
                 route "/blog" >=> blogHandler

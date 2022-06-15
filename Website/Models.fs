@@ -38,6 +38,16 @@ type SapphireNotesViewModel =
     }
 
 [<CLIMutable>]
+type TeamSketchViewModel =
+    {
+        Version : string
+        ReleaseDate : string
+        WindowsFileSize : string
+        DebianUbuntu64FileSize : string
+        DebianUbuntuARMFileSize : string
+    }
+
+[<CLIMutable>]
 type Post =
     {
         Id : int
