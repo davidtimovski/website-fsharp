@@ -142,9 +142,35 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://learningally.org/" ] [ rawText "Learning Ally" ]
+                                    a [ _href "https://www.skype.com" ] [ rawText "Skype" ]
                                 ]
-                                div [ _class "date" ] [ rawText "May, 2021 - Present" ]
+                                div [ _class "date" ] [ rawText "October, 2022 - Present" ]
+                            ]
+                        
+                            div [ _class "tech-list" ] [
+                                h4 [] [ rawText "Tech" ]
+                                p [] [
+                                    span [ _class "item" ] [ rawText "C#" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "ASP.NET" ]
+                                    span [] [ rawText " , " ]
+                                    span [ _class "item" ] [ rawText "CosmosDB" ]
+                                ]
+                            ]
+                        
+                            div [ _class "description" ] [
+                                p [] [ rawText "Will clarify in due time." ]
+                            ]
+                        ]
+                        
+                        hr [ _class "section-separator" ]
+
+                        div [ _class "section-item" ] [
+                            div [ _class "title-and-date" ] [
+                                div [ _class "title" ] [
+                                    a [ _href "https://learningally.org" ] [ rawText "Learning Ally" ]
+                                ]
+                                div [ _class "date" ] [ rawText "May, 2021 - September, 2022" ]
                             ]
                         
                             div [ _class "tech-list" ] [
@@ -163,7 +189,8 @@ let index =
                             ]
                         
                             div [ _class "description" ] [
-                                p [] [ rawText "Will clarify in due time." ]
+                                p [] [ rawText "Through the Toptal contracting platform." ]
+                                p [] [ rawText "Helped refactor and expand their web services (WCF) with new functionality and also assisted with maintenance on the main website. Additionally spent time on the support side, integrating new districts/schools into the application as well as investigating and fixing customer reported issues at the database level." ]
                             ]
                         ]
                         
@@ -172,7 +199,7 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://www.kaloncreative.com/" ] [ rawText "Kalon Creative" ]
+                                    a [ _href "https://www.kaloncreative.com" ] [ rawText "Kalon Creative" ]
                                 ]
                                 div [ _class "date" ] [ rawText "January, 2021 - May, 2021" ]
                             ]
@@ -199,6 +226,7 @@ let index =
                             ]
                         
                             div [ _class "description" ] [
+                                p [] [ rawText "Through the Toptal contracting platform." ]
                                 p [] [ rawText "Worked mostly on adding functionality to a large web application that deals with organizing and managing events, including virtual (live stream) ones." ]
                             ]
                         ]
@@ -208,7 +236,7 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://perceptivesol.com/" ] [ rawText "Perceptive Solutions (WoundZoom)" ]
+                                    a [ _href "https://perceptivesol.com" ] [ rawText "Perceptive Solutions (WoundZoom)" ]
                                 ]
                                 div [ _class "date" ] [ rawText "August, 2020 - December, 2020" ]
                             ]
@@ -254,7 +282,7 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://www.nebb.com/" ] [ rawText "Nebb Solutions" ]
+                                    a [ _href "https://www.nebb.com" ] [ rawText "Nebb Solutions" ]
                                 ]
                                 div [ _class "date" ] [ rawText "January, 2018 - February, 2020" ]
                             ]
@@ -292,7 +320,7 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://www.opengi.co.uk/" ] [ rawText "Open GI" ]
+                                    a [ _href "https://www.opengi.co.uk" ] [ rawText "Open GI" ]
                                 ]
                                 div [ _class "date" ] [ rawText "December, 2016 - December, 2017" ]
                             ]
@@ -331,7 +359,7 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://www.arthaus.mk/" ] [ rawText "ArtHaus" ]
+                                    a [ _href "https://www.arthaus.mk" ] [ rawText "ArtHaus" ]
                                 ]
                                 div [ _class "date" ] [ rawText "March, 2014 - December, 2016" ]
                             ]
