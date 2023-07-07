@@ -19,109 +19,6 @@ let index =
                 ]
 
                 section [] [
-                    div [ _class "section-title" ] [ rawText "Desktop applications" ]
-                    div [ _class "middle" ] [
-                        div [ _class "section-content" ] [
-                            div [ _class "section-item" ] [
-                                div [ _class "title-and-date" ] [
-                                    div [ _class "title" ] [ rawText "Team Sketch" ]
-                                    div [ _class "date" ] [ rawText "June, 2022" ]
-                                ]
-
-                                p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for collaborative drawing" ]
-
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "JavaScript" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText ".NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Avalonia" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SignalR" ]
-                                    ]
-                                ]
-
-                                div [ _class "goal" ] [
-                                    h4 [] [ rawText "Goal" ]
-                                    p [] [ rawText "Wanted to play around with real-time communication but in a more interesting manner than the usual chat app." ]
-                                ]
-
-                                ul [ _class "links" ] [
-                                    li [] [
-                                        a [ _href "/team-sketch" ] [
-                                            i [ _class "icon-download" ] []
-                                            span [] [ rawText "Download" ]
-                                        ]
-                                    ]
-                                    li [] [
-                                        a [ _href "https://github.com/davidtimovski/team-sketch"
-                                            _title "Source Code"
-                                            _target "_blank"
-                                            _rel "noopener" ] [
-                                            i [ _class "icon-github" ] []
-                                            span [] [ rawText "GitHub" ]
-                                        ]
-                                    ]
-                                ]
-                            ]
-
-                            hr [ _class "section-separator" ]
-
-                            div [ _class "section-item" ] [
-                                div [ _class "title-and-date" ] [
-                                    div [ _class "title" ] [ rawText "Sapphire Notes" ]
-                                    div [ _class "date" ] [ rawText "November, 2020" ]
-                                ]
-
-                                p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for managing notes" ]
-
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText ".NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Avalonia" ]
-                                    ]
-                                ]
-
-                                div [ _class "goal" ] [
-                                    h4 [] [ rawText "Goal" ]
-                                    p [] [
-                                        span [] [ rawText "Wanted to take a swing at cross-platform desktop dev with this fairly obscure .NET framework " ]
-                                        a [ _href "https://avaloniaui.net/" ] [ rawText "Avalonia" ]
-                                        span [] [ rawText "." ]
-                                    ]
-                                ]
-
-                                ul [ _class "links" ] [
-                                    li [] [
-                                        a [ _href "/sapphire-notes" ] [
-                                            i [ _class "icon-download" ] []
-                                            span [] [ rawText "Download" ]
-                                        ]
-                                    ]
-                                    li [] [
-                                        a [ _href "https://github.com/davidtimovski/sapphire-notes"
-                                            _title "Source Code"
-                                            _target "_blank"
-                                            _rel "noopener" ] [
-                                            i [ _class "icon-github" ] []
-                                            span [] [ rawText "GitHub" ]
-                                        ]
-                                    ]
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
-
-                section [] [
                     div [ _class "section-title" ] [ rawText "Web applications" ]
                     div [ _class "middle" ] [
                         div [ _class "section-content" ] [
@@ -420,6 +317,148 @@ let index =
                                 ul [ _class "links" ] [
                                     li [] [
                                         a [ _href "https://github.com/davidtimovski/my-routine"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+
+                section [] [
+                    div [ _class "section-title" ] [ rawText "Desktop applications" ]
+                    div [ _class "middle" ] [
+                        div [ _class "section-content" ] [
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "JSON Formatter" ]
+                                    div [ _class "date" ] [ rawText "January, 2023" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for formatting JSON strings" ]
+
+                                div [ _class "tech-list" ] [
+                                    h4 [] [ rawText "Tech" ]
+                                    p [] [
+                                        span [ _class "item" ] [ rawText "C#" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText ".NET Core" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "Avalonia" ]
+                                    ]
+                                ]
+
+                                div [ _class "goal" ] [
+                                    h4 [] [ rawText "Goal" ]
+                                    p [] [ rawText "Wanted to play around with text formatting." ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/json-formatter"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+
+                            hr [ _class "section-separator" ]
+
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "Team Sketch" ]
+                                    div [ _class "date" ] [ rawText "June, 2022" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for collaborative drawing" ]
+
+                                div [ _class "tech-list" ] [
+                                    h4 [] [ rawText "Tech" ]
+                                    p [] [
+                                        span [ _class "item" ] [ rawText "C#" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "JavaScript" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText ".NET Core" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "Avalonia" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "SignalR" ]
+                                    ]
+                                ]
+
+                                div [ _class "goal" ] [
+                                    h4 [] [ rawText "Goal" ]
+                                    p [] [ rawText "Wanted to play around with real-time communication but in a more interesting manner than the usual chat app." ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "/team-sketch" ] [
+                                            i [ _class "icon-download" ] []
+                                            span [] [ rawText "Download" ]
+                                        ]
+                                    ]
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/team-sketch"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+
+                            hr [ _class "section-separator" ]
+
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "Sapphire Notes" ]
+                                    div [ _class "date" ] [ rawText "November, 2020" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for managing notes" ]
+
+                                div [ _class "tech-list" ] [
+                                    h4 [] [ rawText "Tech" ]
+                                    p [] [
+                                        span [ _class "item" ] [ rawText "C#" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText ".NET Core" ]
+                                        span [] [ rawText " , " ]
+                                        span [ _class "item" ] [ rawText "Avalonia" ]
+                                    ]
+                                ]
+
+                                div [ _class "goal" ] [
+                                    h4 [] [ rawText "Goal" ]
+                                    p [] [
+                                        span [] [ rawText "Wanted to take a swing at cross-platform desktop dev with this fairly obscure .NET framework " ]
+                                        a [ _href "https://avaloniaui.net/" ] [ rawText "Avalonia" ]
+                                        span [] [ rawText "." ]
+                                    ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "/sapphire-notes" ] [
+                                            i [ _class "icon-download" ] []
+                                            span [] [ rawText "Download" ]
+                                        ]
+                                    ]
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/sapphire-notes"
                                             _title "Source Code"
                                             _target "_blank"
                                             _rel "noopener" ] [

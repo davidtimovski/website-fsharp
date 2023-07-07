@@ -19,11 +19,16 @@ let index =
                         h1 [ _class "banner-title" ] [ rawText "David Timovski" ]
                         div [ _class "job-title" ] [ rawText ".NET Full-Stack Developer" ]
                         
-                        p [ _class "contact-detail" ] [ rawText "Location:" ]
-                        span [] [ rawText "Skopje, North Macedonia" ]
+                        p [ _class "contact-detail" ] [ rawText "Current location:" ]
+                        span [] [ rawText "Prague, Czech Republic" ]
 
-                        p [ _class "contact-detail" ] [ rawText "E-mail:" ]
-                        span [] [ rawText "david.timovski@gmail.com" ]
+                        p [ _class "contact-detail" ] [ rawText "Contact:" ]
+                        span [] [
+                             rawText "Me on "
+                             a [ _href "https://www.linkedin.com/in/davidtimovski"
+                                 _target "_blank"
+                                 _rel "noopener" ] [ rawText "LinkedIn" ]
+                        ]
 
                         div [ _class "site-version" ] [
                             span [] [ rawText "The coin has been flipped." ]
@@ -41,7 +46,7 @@ let index =
             section [ _class "grey-section" ] [
                 div [ _class "social-icons-wrap middle" ] [
                     div [ _class "social-icons" ] [
-                        a [ _href "https://mk.linkedin.com/in/davidtimovski"
+                        a [ _href "https://www.linkedin.com/in/davidtimovski"
                             _class "icon-linkedin"
                             _title "LinkedIn"
                             _target "_blank"
@@ -56,14 +61,9 @@ let index =
                             _title "Stack Overflow"
                             _target "_blank"
                             _rel "noopener" ] []
-                        a [ _href "https://softwareengineering.stackexchange.com/users/154465/alternatex"
-                            _class "icon-stack-exchange"
-                            _title "Software Engineering"
-                            _target "_blank"
-                            _rel "noopener" ] []
-                        a [ _href "https://angel.co/david-timovski"
+                        a [ _href "https://wellfound.com/u/david-timovski"
                             _class "icon-angellist"
-                            _title "AngelList"
+                            _title "Wellfound"
                             _target "_blank"
                             _rel "noopener" ] []
                     ]
