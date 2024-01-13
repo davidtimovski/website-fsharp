@@ -14,10 +14,10 @@ let getConnection (ctx : HttpContext) =
     new NpgsqlConnection(configuration.["ConnectionStrings:DefaultConnectionString"])
 
 [<Literal>]
-let private WeekInSeconds = 604800
+let private twoHoursInSeconds = 7200
 
-let private weekResponseCaching : HttpHandler =
-    publicResponseCaching WeekInSeconds None
+let private responseCaching : HttpHandler =
+    publicResponseCaching twoHoursInSeconds None
 
 let private toPostViewModel (post: Post) (previousPost: Post) (nextPost: Post) =
     let previousPostId =
@@ -111,15 +111,15 @@ let webApp : (HttpFunc -> HttpContext -> HttpFuncResult) =
     choose [
         GET >=>
             choose [
-                route "/" >=> weekResponseCaching >=> (htmlView Home.Index.index)
+                route "/" >=> responseCaching >=> (htmlView Home.Index.index)
                 route "/sapphire-notes" >=> sapphireNotesHandler
                 route "/team-sketch" >=> teamSketchHandler
-                route "/my-projects" >=> weekResponseCaching >=> (htmlView MyProjects.index)
-                route "/my-projects/temporal" >=> weekResponseCaching >=> (htmlView MyProjects.temporal)
+                route "/my-projects" >=> responseCaching >=> (htmlView MyProjects.index)
+                route "/my-projects/temporal" >=> responseCaching >=> (htmlView MyProjects.temporal)
                 route "/blog" >=> blogHandler
                 routef "/blog/%i" blogWithParamHandler
                 routef "/blog/%i/%s" blogWithParamAndSlugHandler
-                route "/bookmarks" >=> weekResponseCaching >=> bookmarksHandler
-                route "/api/expertise" >=> weekResponseCaching >=> expertiseHandler
+                route "/bookmarks" >=> responseCaching >=> bookmarksHandler
+                route "/api/expertise" >=> responseCaching >=> expertiseHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]
