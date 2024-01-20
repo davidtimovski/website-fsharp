@@ -9,12 +9,18 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
 open Giraffe
+open OpenTelemetry.Metrics
 open Handlers
 
 let configureApp (app : IApplicationBuilder) =
     let env = app.ApplicationServices.GetService<IWebHostEnvironment>()
 
     app.UseStaticFiles() |> ignore
+
+    app.UseRouting()
+        .UseEndpoints(fun config ->
+            config.MapPrometheusScrapingEndpoint() |> ignore
+        ) |> ignore
 
     (match env.IsDevelopment() with
     | true  ->
@@ -23,7 +29,7 @@ let configureApp (app : IApplicationBuilder) =
         app.UseGiraffeErrorHandler(errorHandler)
            .UseResponseCaching())
            
-        .UseGiraffe(webApp)
+        .UseGiraffe webApp
 
 let configureAppConfiguration (context: WebHostBuilderContext) (config: IConfigurationBuilder) = 
     config
@@ -38,10 +44,20 @@ let configureServices (services : IServiceCollection) =
             
     services.AddSingleton<Json.ISerializer>(SystemTextJson.Serializer(SystemTextJson.Serializer.DefaultOptions)) |> ignore
 
+    services.AddOpenTelemetry()
+        .WithMetrics(fun opt ->
+            opt.AddPrometheusExporter() |> ignore
+
+            opt.AddMeter("Microsoft.AspNetCore.Hosting", "Microsoft.AspNetCore.Server.Kestrel") |> ignore
+
+            opt.AddView("http.server.request.duration", new ExplicitBucketHistogramConfiguration( Boundaries = [| 0; 0.005; 0.01; 0.025; 0.05; 0.075; 0.1; 0.25; 0.5; 0.75; 1; 2.5; 5; 7.5; 10 |] )) |> ignore
+        ) |> ignore
+
 [<EntryPoint>]
 let main args =
     let contentRoot = Directory.GetCurrentDirectory()
     let webRoot     = Path.Combine(contentRoot, "WebRoot")
+
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(
             fun webHostBuilder ->
@@ -55,4 +71,5 @@ let main args =
                     |> ignore)
         .Build()
         .Run()
+
     0
