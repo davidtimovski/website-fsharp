@@ -1,15 +1,14 @@
 module DavidTimovskiWebsite.Handlers
 
 open System
-open System.Collections.Generic
 open Microsoft.AspNetCore.Http
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Logging
 open Giraffe
 open Npgsql
 open DavidTimovskiWebsite.Views
+open Metrics
 open Models
-open Website.Services
 
 let getConnection (ctx : HttpContext) =
     let configuration = ctx.GetService<IConfiguration>()
@@ -17,9 +16,9 @@ let getConnection (ctx : HttpContext) =
 
 let logHit (ctx : HttpContext) (route : string) =
     let metrics = ctx.GetService<MetricsService>()
-    metrics.HitsCounter.Add(1, new KeyValuePair<string, obj>(MetricsService.RouteTag, route)) |> ignore
+    metrics.LogHit(route) |> ignore
 
-let logHitMetric (route : string) : HttpHandler =
+let logHitHandler (route : string) : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
         logHit ctx route |> ignore
         next ctx
@@ -125,15 +124,15 @@ let webApp : (HttpFunc -> HttpContext -> HttpFuncResult) =
     choose [
         GET >=>
             choose [
-                route "/" >=> logHitMetric "/" >=> responseCaching >=> (htmlView Home.Index.index)
-                route "/sapphire-notes" >=> logHitMetric "/sapphire-notes" >=> sapphireNotesHandler
-                route "/team-sketch" >=> logHitMetric "/team-sketch" >=> teamSketchHandler
-                route "/my-projects" >=> logHitMetric "/my-projects" >=> responseCaching >=> (htmlView MyProjects.index)
-                route "/my-projects/temporal" >=> logHitMetric "/my-projects/temporal" >=> responseCaching >=> (htmlView MyProjects.temporal)
-                route "/blog" >=> logHitMetric "/blog" >=> blogHandler
+                route "/" >=> logHitHandler "/" >=> responseCaching >=> (htmlView Home.Index.index)
+                route "/sapphire-notes" >=> logHitHandler "/sapphire-notes" >=> sapphireNotesHandler
+                route "/team-sketch" >=> logHitHandler "/team-sketch" >=> teamSketchHandler
+                route "/my-projects" >=> logHitHandler "/my-projects" >=> responseCaching >=> (htmlView MyProjects.index)
+                route "/my-projects/temporal" >=> logHitHandler "/my-projects/temporal" >=> responseCaching >=> (htmlView MyProjects.temporal)
+                route "/blog" >=> logHitHandler "/blog" >=> blogHandler
                 routef "/blog/%i" blogWithParamHandler
                 routef "/blog/%i/%s" blogWithParamAndSlugHandler
-                route "/bookmarks" >=> logHitMetric "/bookmarks" >=> responseCaching >=> bookmarksHandler
+                route "/bookmarks" >=> logHitHandler "/bookmarks" >=> responseCaching >=> bookmarksHandler
                 route "/api/expertise" >=> responseCaching >=> expertiseHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]

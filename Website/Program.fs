@@ -11,7 +11,7 @@ open Microsoft.Extensions.Hosting
 open Giraffe
 open OpenTelemetry.Metrics
 open Handlers
-open Website.Services
+open Metrics
 
 let configureApp (app : IApplicationBuilder) =
     let env = app.ApplicationServices.GetService<IWebHostEnvironment>()
