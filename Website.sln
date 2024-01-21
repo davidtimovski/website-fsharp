@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Website", "Website\Website.fsproj", "{D741B6EA-610B-48F4-ACE4-F209257323C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics", "Metrics\Metrics.csproj", "{1FEDBD18-9D16-484F-893F-ADDC904B43A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D741B6EA-610B-48F4-ACE4-F209257323C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D741B6EA-610B-48F4-ACE4-F209257323C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D741B6EA-610B-48F4-ACE4-F209257323C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FEDBD18-9D16-484F-893F-ADDC904B43A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FEDBD18-9D16-484F-893F-ADDC904B43A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FEDBD18-9D16-484F-893F-ADDC904B43A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FEDBD18-9D16-484F-893F-ADDC904B43A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -36,6 +36,9 @@
 		</Content>
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\Metrics\Metrics.csproj" />
+	</ItemGroup>
+	<ItemGroup>
 		<PackageReference Update="FSharp.Core" Version="8.0.101" />
 	</ItemGroup>
 </Project>

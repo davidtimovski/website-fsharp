@@ -1,6 +1,7 @@
 module DavidTimovskiWebsite.Handlers
 
 open System
+open System.Collections.Generic
 open Microsoft.AspNetCore.Http
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Logging
@@ -8,10 +9,20 @@ open Giraffe
 open Npgsql
 open DavidTimovskiWebsite.Views
 open Models
+open Website.Services
 
 let getConnection (ctx : HttpContext) =
     let configuration = ctx.GetService<IConfiguration>()
     new NpgsqlConnection(configuration.["ConnectionStrings:DefaultConnectionString"])
+
+let logHit (ctx : HttpContext) (route : string) =
+    let metrics = ctx.GetService<MetricsService>()
+    metrics.HitsCounter.Add(1, new KeyValuePair<string, obj>(MetricsService.RouteTag, route)) |> ignore
+
+let logHitMetric (route : string) : HttpHandler =
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        logHit ctx route |> ignore
+        next ctx
 
 [<Literal>]
 let private twoHoursInSeconds = 7200
@@ -35,7 +46,6 @@ let private toPostViewModel (post: Post) (previousPost: Post) (nextPost: Post) =
         else None
 
     PostViewModel(post.Title, post.Body, post.DateCreated.ToString("dd MMMM yyyy"), previousPostId, previousPostTitle, nextPostId, nextPostTitle)
-
 
 let sapphireNotesHandler : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
@@ -67,6 +77,8 @@ let blogHandler : HttpHandler =
 
 let blogWithParamHandler (id : int) : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
+        logHit ctx $"/blog/{id}" |> ignore
+
         let conn = getConnection ctx
         let post = BlogPostsRepository.getById id conn
         let previousPost = BlogPostsRepository.getPrevious post.DateCreated conn
@@ -79,6 +91,8 @@ let blogWithParamHandler (id : int) : HttpHandler =
 
 let blogWithParamAndSlugHandler (id : int, _ : string) : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
+        logHit ctx $"/blog/{id}" |> ignore
+
         let conn = getConnection ctx
         let post = BlogPostsRepository.getById id conn
         let previousPost = BlogPostsRepository.getPrevious post.DateCreated conn
@@ -111,15 +125,15 @@ let webApp : (HttpFunc -> HttpContext -> HttpFuncResult) =
     choose [
         GET >=>
             choose [
-                route "/" >=> responseCaching >=> (htmlView Home.Index.index)
-                route "/sapphire-notes" >=> sapphireNotesHandler
-                route "/team-sketch" >=> teamSketchHandler
-                route "/my-projects" >=> responseCaching >=> (htmlView MyProjects.index)
-                route "/my-projects/temporal" >=> responseCaching >=> (htmlView MyProjects.temporal)
-                route "/blog" >=> blogHandler
+                route "/" >=> logHitMetric "/" >=> responseCaching >=> (htmlView Home.Index.index)
+                route "/sapphire-notes" >=> logHitMetric "/sapphire-notes" >=> sapphireNotesHandler
+                route "/team-sketch" >=> logHitMetric "/team-sketch" >=> teamSketchHandler
+                route "/my-projects" >=> logHitMetric "/my-projects" >=> responseCaching >=> (htmlView MyProjects.index)
+                route "/my-projects/temporal" >=> logHitMetric "/my-projects/temporal" >=> responseCaching >=> (htmlView MyProjects.temporal)
+                route "/blog" >=> logHitMetric "/blog" >=> blogHandler
                 routef "/blog/%i" blogWithParamHandler
                 routef "/blog/%i/%s" blogWithParamAndSlugHandler
-                route "/bookmarks" >=> responseCaching >=> bookmarksHandler
+                route "/bookmarks" >=> logHitMetric "/bookmarks" >=> responseCaching >=> bookmarksHandler
                 route "/api/expertise" >=> responseCaching >=> expertiseHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]

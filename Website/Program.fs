@@ -11,6 +11,7 @@ open Microsoft.Extensions.Hosting
 open Giraffe
 open OpenTelemetry.Metrics
 open Handlers
+open Website.Services
 
 let configureApp (app : IApplicationBuilder) =
     let env = app.ApplicationServices.GetService<IWebHostEnvironment>()
@@ -48,10 +49,12 @@ let configureServices (services : IServiceCollection) =
         .WithMetrics(fun opt ->
             opt.AddPrometheusExporter() |> ignore
 
-            opt.AddMeter("Microsoft.AspNetCore.Hosting", "Microsoft.AspNetCore.Server.Kestrel") |> ignore
+            opt.AddMeter("Microsoft.AspNetCore.Hosting", "Microsoft.AspNetCore.Server.Kestrel", "Website") |> ignore
 
             opt.AddView("http.server.request.duration", new ExplicitBucketHistogramConfiguration( Boundaries = [| 0; 0.005; 0.01; 0.025; 0.05; 0.075; 0.1; 0.25; 0.5; 0.75; 1; 2.5; 5; 7.5; 10 |] )) |> ignore
         ) |> ignore
+
+    services.AddSingleton<MetricsService>() |> ignore
 
 [<EntryPoint>]
 let main args =
