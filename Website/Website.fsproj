@@ -20,6 +20,7 @@
 		<Compile Include="Repositories/ExpertiseRepository.fs" />
 		<Compile Include="Repositories/BlogPostsRepository.fs" />
 		<Compile Include="Repositories/BookmarksRepository.fs" />
+		<Compile Include="Renderers.fs" />
 		<Compile Include="Views/Layout.fs" />
 		<Compile Include="Views/Home/Index.fs" />
 		<Compile Include="Views\Home\SapphireNotes.fs" />

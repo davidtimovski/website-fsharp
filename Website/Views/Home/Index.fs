@@ -2,6 +2,7 @@ module DavidTimovskiWebsite.Views.Home.Index
 
 open Giraffe.ViewEngine
 open DavidTimovskiWebsite.Views.Layout
+open DavidTimovskiWebsite.Renderers
 
 let index =
     ([
@@ -146,18 +147,9 @@ let index =
                                 ]
                                 div [ _class "date" ] [ rawText "October, 2022 - Present" ]
                             ]
-                        
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "CosmosDB" ]
-                                ]
-                            ]
-                        
+
+                            techList [ "C#"; ".NET Framework/8"; "ASP.NET (Core)"; "Cosmos DB"; "Azure Event Hubs"; "Azure Cloud Services"; "Azure Cache for Redis"; "Azure Key Vault" ]
+                       
                             div [ _class "description" ] [
                                 p [] [ rawText "Will clarify in due time." ]
                             ]
@@ -173,20 +165,7 @@ let index =
                                 div [ _class "date" ] [ rawText "May, 2021 - September, 2022" ]
                             ]
                         
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "WCF" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SQL Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SVN" ]
-                                ]
-                            ]
+                            techList [ "C#"; "SQL Server"; "WCF"; "Entity Framework" ]
                         
                             div [ _class "description" ] [
                                 p [] [ rawText "Through the Toptal contracting platform." ]
@@ -204,26 +183,7 @@ let index =
                                 div [ _class "date" ] [ rawText "January, 2021 - May, 2021" ]
                             ]
                         
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SQL Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "JavaScript" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "jQuery" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Git" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Jira" ]
-                                ]
-                            ]
+                            techList [ "C#"; "ASP.NET"; "SQL Server"; "Entity Framework"; "JavaScript"; "jQuery" ]
                         
                             div [ _class "description" ] [
                                 p [] [ rawText "Through the Toptal contracting platform." ]
@@ -241,30 +201,7 @@ let index =
                                 div [ _class "date" ] [ rawText "August, 2020 - December, 2020" ]
                             ]
 
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SQL Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Hangfire" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Azure API for FHIR" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "JavaScript" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "AngularJS" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Git" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Azure DevOps" ]
-                                ]
-                            ]
+                            techList [ "C#"; "ASP.NET"; "SQL Server"; "Entity Framework"; "Hangfire"; "Azure API for FHIR"; "JavaScript"; "AngularJS" ]
 
                             div [ _class "description" ] [
                                 p [] [ rawText "My first Toptal client. A company that deals with wound imaging, documentation, and analysis. My first task was creating a dashboard with interactive charts that showed a high-level overview of patient and wound data." ]
@@ -287,26 +224,7 @@ let index =
                                 div [ _class "date" ] [ rawText "January, 2018 - February, 2020" ]
                             ]
 
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET (Core)" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "WCF" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "WPF" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Git" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Azure DevOps" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Scrum" ]
-                                ]
-                            ]
+                            techList [ "C#"; "ASP.NET Core"; "WCF"; "WPF"; "Entity Framework (Core)" ]
 
                             div [ _class "description" ] [
                                 p [] [ rawText "I worked on an enterprise application that deals with network planning for the telecom industry. My job revolved around developing and maintaining Restful APIs that provided additional functionalities and third-party integrations to the main desktop application." ]
@@ -325,28 +243,7 @@ let index =
                                 div [ _class "date" ] [ rawText "December, 2016 - December, 2017" ]
                             ]
 
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SQL Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "JavaScript" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Durandal.js" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Team Foundation Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Azure DevOps" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Scrum" ]
-                                ]
-                            ]
+                            techList [ "C#"; "ASP.NET"; "SQL Server"; "Entity Framework"; "JavaScript"; "Durandal.js" ]
 
                             div [ _class "description" ] [
                                 p [] [ rawText "I was a part of a distributed (Macedonian/English) team that worked on a large web application for managing insurance claims. We followed a strict Scrum methodology that helped us remain organized." ]
@@ -364,34 +261,7 @@ let index =
                                 div [ _class "date" ] [ rawText "March, 2014 - December, 2016" ]
                             ]
 
-                            div [ _class "tech-list" ] [
-                                h4 [] [ rawText "Tech" ]
-                                p [] [
-                                    span [ _class "item" ] [ rawText "C#" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET MVC" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "ASP.NET Web Forms" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "SQL Server" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Entity Framework" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "PHP" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Laravel" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "MySQL" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "JavaScript" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "jQuery" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Git" ]
-                                    span [] [ rawText " , " ]
-                                    span [ _class "item" ] [ rawText "Team Foundation Server" ]
-                                ]
-                            ]
+                            techList [ "C#"; "ASP.NET MVC"; "ASP.NET Web Forms"; "SQL Server"; "Entity Framework"; "PHP"; "Laravel"; "MySQL"; "JavaScript"; "jQuery" ]
 
                             div [ _class "description" ] [
                                 p [] [ rawText "Worked on small to medium sized web applications built in PHP/MySQL or ASP.NET MVC/SQL Server. My responsibilities involved both back and front-end, sometimes including design. I worked extensively with CSS, JavaScript and jQuery and I also developed a plugin/theme pair for WordPress." ]

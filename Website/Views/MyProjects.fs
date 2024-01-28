@@ -1,7 +1,9 @@
 module DavidTimovskiWebsite.Views.MyProjects
 
+open System.Collections.Generic
 open Giraffe.ViewEngine
 open DavidTimovskiWebsite.Views.Layout
+open DavidTimovskiWebsite.Renderers
 
 let index =
     let pageTitle = "My Projects"
@@ -30,32 +32,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "An ecosystem of PWAs" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#/F#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "ASP.NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "PostgreSQL" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Dapper.NET" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "RabbitMQ" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Linux (Ubuntu)" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Aurelia" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "TypeScript" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SASS" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "PWA" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "IndexedDB" ]
-                                    ]
-                                ]
+                                techList [ "C#/F#"; "ASP.NET Core"; "PostgreSQL"; "Dapper.NET"; "RabbitMQ"; "SignalR"; "SvelteKit"; "Aurelia"; "TypeScript"; "SASS"; "PWA"; "Sentry" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -103,22 +80,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "Track your smoking habits" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "F#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "ASP.NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "PostgreSQL" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Svelte" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "TypeScript" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SASS" ]
-                                    ]
-                                ]
+                                techList [ "F#"; "ASP.NET Core"; "PostgreSQL"; "Svelte"; "TypeScript"; "SASS" ]
 
                                 ul [ _class "links" ] [
                                     li [] [
@@ -152,16 +114,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "Finally, a metronome that allows you to create and manage multiple tempos" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "TypeScript" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Svelte" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SASS" ]
-                                    ]
-                                ]
+                                techList [ "TypeScript"; "Svelte"; "SASS" ]
 
                                 ul [ _class "links" ] [
                                     li [] [
@@ -195,18 +148,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "A compound interest calculator" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Blazor (WebAssembly)" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Linux (Ubuntu)" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "PWA" ]
-                                    ]
-                                ]
+                                techList [ "C#"; "Blazor (WASM)"; "PWA" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -245,16 +187,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "Take debt and minimize the number of necessary transactions to resolve it" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "Aurelia" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "JavaScript (ES.Next)" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SASS" ]
-                                    ]
-                                ]
+                                techList [ "Aurelia"; "JavaScript"; "SASS" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -293,20 +226,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "Progress-tracking tool for people learning an instrument" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "ASP.NET MVC" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SQL Server" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Entity Framework" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Knockout.js" ]
-                                    ]
-                                ]
+                                techList [ "C#"; "ASP.NET MVC"; "SQL Server"; "Entity Framework"; "Knockout.js" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -342,16 +262,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for formatting JSON strings" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText ".NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Avalonia" ]
-                                    ]
-                                ]
+                                techList [ "C#"; ".NET 7"; "Avalonia UI" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -381,20 +292,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for collaborative drawing" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "JavaScript" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText ".NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Avalonia" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "SignalR" ]
-                                    ]
-                                ]
+                                techList [ "C#"; ".NET 7"; "Avalonia UI"; "SignalR"; "JavaScript" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -430,16 +328,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "A cross-platform desktop application for managing notes" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "C#" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText ".NET Core" ]
-                                        span [] [ rawText " , " ]
-                                        span [ _class "item" ] [ rawText "Avalonia" ]
-                                    ]
-                                ]
+                                techList [ "C#"; ".NET 6"; "Avalonia UI" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -484,12 +373,7 @@ let index =
 
                                 p [ _class "subtitle" ] [ rawText "A browser extension for live soccer streams" ]
 
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "TypeScript" ]
-                                    ]
-                                ]
+                                techList [ "TypeScript" ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
@@ -541,13 +425,6 @@ let index =
                                 ]
 
                                 p [ _class "subtitle" ] [ rawText "Yet another JavaScript library for handling dates" ]
-
-                                div [ _class "tech-list" ] [
-                                    h4 [] [ rawText "Tech" ]
-                                    p [] [
-                                        span [ _class "item" ] [ rawText "TypeScript" ]
-                                    ]
-                                ]
 
                                 div [ _class "goal" ] [
                                     h4 [] [ rawText "Goal" ]
