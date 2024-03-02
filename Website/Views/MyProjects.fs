@@ -256,6 +256,66 @@ let index =
                         div [ _class "section-content" ] [
                             div [ _class "section-item" ] [
                                 div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "Panoramic" ]
+                                    div [ _class "date" ] [ rawText "December, 2023" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "A desktop application for managing notes and links" ]
+
+                                techList [ "C#"; ".NET 8"; "WinUI 3"; "Windows App SDK" ]
+
+                                div [ _class "goal" ] [
+                                    h4 [] [ rawText "Goal" ]
+                                    p [] [ rawText "Wanted to learn WinUI 3 and Windows App SDK." ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/panoramic"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+
+                            hr [ _class "section-separator" ]
+
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
+                                    div [ _class "title" ] [ rawText "Direct" ]
+                                    div [ _class "date" ] [ rawText "July, 2023" ]
+                                ]
+
+                                p [ _class "subtitle" ] [ rawText "A desktop application for chatting" ]
+
+                                techList [ "C#"; ".NET 7"; "WinUI 3"; "Windows App SDK" ]
+
+                                div [ _class "goal" ] [
+                                    h4 [] [ rawText "Goal" ]
+                                    p [] [ rawText "Wanted to learn WinUI 3 and Windows App SDK." ]
+                                ]
+
+                                ul [ _class "links" ] [
+                                    li [] [
+                                        a [ _href "https://github.com/davidtimovski/direct"
+                                            _title "Source Code"
+                                            _target "_blank"
+                                            _rel "noopener" ] [
+                                            i [ _class "icon-github" ] []
+                                            span [] [ rawText "GitHub" ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+
+                            hr [ _class "section-separator" ]
+
+                            div [ _class "section-item" ] [
+                                div [ _class "title-and-date" ] [
                                     div [ _class "title" ] [ rawText "JSON Formatter" ]
                                     div [ _class "date" ] [ rawText "January, 2023" ]
                                 ]
