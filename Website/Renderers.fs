@@ -12,7 +12,7 @@ let techList (items) =
         Seq.toList
     
     let outputList = List<XmlNode>()
-    for i in 1 .. nodes.Length - 1 do
+    for i in 1 .. nodes.Length - 2 do
         outputList.Add(nodes[i])
         outputList.Add(span [] [ rawText " , " ])
 
