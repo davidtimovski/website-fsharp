@@ -148,7 +148,7 @@ let index =
                                 div [ _class "date" ] [ rawText "October, 2022 - Present" ]
                             ]
 
-                            techList [ "C#"; ".NET Framework/8"; "ASP.NET (Core)"; "Cosmos DB"; "Azure Event Hubs"; "Azure Cloud Services"; "Azure Cache for Redis"; "Azure Key Vault" ]
+                            techList [ "C#"; ".NET Framework/8"; "ASP.NET (Core)"; "Cosmos DB"; "Azure Event Hubs"; "Azure Cache for Redis"; "Azure Key Vault"; "Azure Service Bus"; "Azure Cloud Services" ]
                        
                             div [ _class "description" ] [
                                 p [] [ rawText "Will clarify in due time." ]
