@@ -4,7 +4,6 @@ open System
 open System.IO
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
-open Microsoft.AspNetCore.Http
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
@@ -12,6 +11,7 @@ open Giraffe
 open OpenTelemetry.Metrics
 open Handlers
 open Metrics
+open Configuration
 
 let configureApp (app : IApplicationBuilder) =
     let env = app.ApplicationServices.GetService<IWebHostEnvironment>()
@@ -43,8 +43,6 @@ let configureServices (services : IServiceCollection) =
             .AddResponseCaching()
             .AddGiraffe() |> ignore
             
-    services.AddSingleton<Json.ISerializer>(SystemTextJson.Serializer(SystemTextJson.Serializer.DefaultOptions)) |> ignore
-
     services.AddOpenTelemetry()
         .WithMetrics(fun opt ->
             opt.AddPrometheusExporter() |> ignore
@@ -55,6 +53,18 @@ let configureServices (services : IServiceCollection) =
         ) |> ignore
 
     services.AddSingleton<MetricsService>() |> ignore
+
+    // Configure options
+    let serviceProvider = services.BuildServiceProvider()
+    let configuration =
+        serviceProvider.GetService<IConfiguration>()
+
+    services.Configure<DatabaseOptions>(
+        configuration.GetSection("ConnectionStrings")) |> ignore
+    services.Configure<SapphireNotesOptions>(
+        configuration.GetSection("SapphireNotes")) |> ignore
+    services.Configure<TeamSketchOptions>(
+        configuration.GetSection("TeamSketch")) |> ignore
 
 [<EntryPoint>]
 let main args =

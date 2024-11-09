@@ -2,7 +2,7 @@
 
 namespace Metrics;
 
-public class MetricsService
+public sealed class MetricsService
 {
     private const string MeterName = "Website";
     private const string RouteTag = "route";

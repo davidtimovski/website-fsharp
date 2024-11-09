@@ -2,17 +2,18 @@ module DavidTimovskiWebsite.Handlers
 
 open System
 open Microsoft.AspNetCore.Http
-open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Logging
 open Giraffe
 open Npgsql
 open DavidTimovskiWebsite.Views
 open Metrics
 open Models
+open Microsoft.Extensions.Options
+open Configuration
 
 let getConnection (ctx : HttpContext) =
-    let configuration = ctx.GetService<IConfiguration>()
-    new NpgsqlConnection(configuration.["ConnectionStrings:DefaultConnectionString"])
+    let databaseOptions = ctx.GetService<IOptions<DatabaseOptions>>().Value
+    new NpgsqlConnection(databaseOptions.DefaultConnectionString)
 
 let logHit (ctx : HttpContext) (route : string) =
     let metrics = ctx.GetService<MetricsService>()
@@ -48,16 +49,30 @@ let private toPostViewModel (post: Post) (previousPost: Post) (nextPost: Post) =
 
 let sapphireNotesHandler : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
-        let configuration = ctx.GetService<IConfiguration>()
-        let viewModel = configuration.GetSection("SapphireNotes").Get<SapphireNotesViewModel>()
+        let options = ctx.GetService<IOptionsMonitor<SapphireNotesOptions>>().CurrentValue
+        let viewModel =
+            {
+                Version = options.Version
+                ReleaseDate = options.ReleaseDate
+                WindowsFileSize = options.WindowsFileSize
+                DebianUbuntu64FileSize = options.DebianUbuntu64FileSize
+                DebianUbuntuARMFileSize = options.DebianUbuntuARMFileSize
+            } : SapphireNotesViewModel
 
         let view = Home.SapphireNotes.sapphireNotes viewModel
         htmlView view next ctx
 
 let teamSketchHandler : HttpHandler =
     fun (next : HttpFunc) (ctx : HttpContext) ->
-        let configuration = ctx.GetService<IConfiguration>()
-        let viewModel = configuration.GetSection("TeamSketch").Get<TeamSketchViewModel>()
+        let options = ctx.GetService<IOptionsMonitor<TeamSketchOptions>>().CurrentValue
+        let viewModel =
+            {
+                Version = options.Version
+                ReleaseDate = options.ReleaseDate
+                WindowsFileSize = options.WindowsFileSize
+                DebianUbuntu64FileSize = options.DebianUbuntu64FileSize
+                DebianUbuntuARMFileSize = options.DebianUbuntuARMFileSize
+            } : TeamSketchViewModel
 
         let view = Home.TeamSketch.teamSketch viewModel
         htmlView view next ctx
