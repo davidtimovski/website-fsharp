@@ -9,10 +9,10 @@
 		<PackageReference Include="Giraffe" Version="7.0.2" />
 		<PackageReference Include="Giraffe.ViewEngine" Version="1.4.0" />
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.403" />
 		<PackageReference Include="Npgsql" Version="8.0.5" />
 		<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.7.0-rc.1" />
-		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.10.0" />
 		<PackageReference Include="Ply" Version="0.3.*" />
 	</ItemGroup>
 	<ItemGroup>
@@ -41,6 +41,6 @@
 		<ProjectReference Include="..\Metrics\Metrics.csproj" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Update="FSharp.Core" Version="8.0.401" />
+		<PackageReference Update="FSharp.Core" Version="8.0.403" />
 	</ItemGroup>
 </Project>
