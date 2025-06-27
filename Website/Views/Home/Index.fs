@@ -143,15 +143,33 @@ let index =
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [
-                                    a [ _href "https://www.skype.com" ] [ rawText "Skype" ]
+                                    a [ _href "https://www.microsoft.com" ] [ rawText "Microsoft (Teams Free)" ]
                                 ]
-                                div [ _class "date" ] [ rawText "October, 2022 - Present" ]
+                                div [ _class "date" ] [ rawText "May, 2025 - Present" ]
+                            ]
+
+                            techList [ "C#"; ".NET Framework/8"; "ASP.NET (Core)"; "Cosmos DB"; "Azure Event Hubs"; "Azure Cache for Redis"; "Azure Key Vault"; "Azure Service Bus"; ]
+                       
+                            div [ _class "description" ] [
+                                p [] [ rawText "Working on more or less the same things as before." ]
+                            ]
+                        ]
+                        
+                        hr [ _class "section-separator" ]
+
+                        div [ _class "section-item" ] [
+                            div [ _class "title-and-date" ] [
+                                div [ _class "title" ] [
+                                    a [ _href "https://www.skype.com" ] [ rawText "Microsoft (Skype)" ]
+                                ]
+                                div [ _class "date" ] [ rawText "October, 2022 - May, 2025" ]
                             ]
 
                             techList [ "C#"; ".NET Framework/8"; "ASP.NET (Core)"; "Cosmos DB"; "Azure Event Hubs"; "Azure Cache for Redis"; "Azure Key Vault"; "Azure Service Bus"; "Azure Cloud Services" ]
                        
                             div [ _class "description" ] [
-                                p [] [ rawText "Will clarify in due time." ]
+                                p [] [ rawText "Well we all know how that turned out.." ]
+                                p [] [ rawText "Jokes aside, worked on back-end services handling user accounts, reputation, user settings, meetings, and various other flows (too many to mention) that were essential to the functioning of the Skype client." ]
                             ]
                         ]
                         
