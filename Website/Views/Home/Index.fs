@@ -290,32 +290,36 @@ let index =
             ]
 
             section [] [
-                div [ _class "section-title" ] [ rawText "Education" ]
+                div [ _class "section-title" ] [ rawText "Honors & certifications" ]
 
                 div [ _class "middle" ] [
                     div [ _class "section-content" ] [
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
-                                div [ _class "title" ] [ rawText "European University - Republic of Macedonia" ]
-                                div [ _class "date" ] [ rawText "2010 - 2013" ]
+                                div [ _class "title" ] [ rawText "Microsoft Azure AI Fundamentals (AI-900)" ]
+                                div [ _class "date" ] [ rawText "September 2025" ]
                             ]
 
-                            div [ _class "subtitle" ] [ rawText "Bachelor of Software Engineering (B.SE.)" ]
+                            div [ _class "subtitle" ] [ rawText "LinkedIn Learning" ]
 
                             div [ _class "description" ] [
-                                p [] [ rawText "I built multiple applications while I was a student and did a ton of essays as additional learning material." ]
-                                p [] [ rawText "My graduation project was a web application for auctioning written in PHP. The purpose was to explain all of the technologies involved in building a web application, from designing the database to writing the back-end code." ]
+                                p [] [ rawText "Learning path for Azure AI fundamentals completed." ]
+                            ]
+
+                            ul [ _class "links" ] [
+                                li [] [
+                                    a [ _href "https://www.linkedin.com/learning/certificates/3f30f677dbe9c8be16affeb03282071fc7fa2dc990289e0e8271ae3adc00d208?trk=share_certificate"
+                                        _target "_blank"
+                                        _rel "noopener" ] [
+                                        i [ _class "icon-external-link-square" ] []
+                                        span [] [ rawText "Certificate" ]
+                                    ]
+                                ]
                             ]
                         ]
-                    ]
-                ]
-            ]
 
-            section [] [
-                div [ _class "section-title" ] [ rawText "Honors & certifications" ]
+                        hr [ _class "section-separator" ]
 
-                div [ _class "middle" ] [
-                    div [ _class "section-content" ] [
                         div [ _class "section-item" ] [
                             div [ _class "title-and-date" ] [
                                 div [ _class "title" ] [ rawText "Professional Scrum Master I" ]
@@ -363,6 +367,28 @@ let index =
 
                             div [ _class "description" ] [
                                 p [] [ rawText "During my third year of IT studies, I was awarded a student scholarship of type B for students doing bachelor studies. The scholarship was awarded on the basis of an 8.1 grade average." ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+
+            section [] [
+                div [ _class "section-title" ] [ rawText "Education" ]
+
+                div [ _class "middle" ] [
+                    div [ _class "section-content" ] [
+                        div [ _class "section-item" ] [
+                            div [ _class "title-and-date" ] [
+                                div [ _class "title" ] [ rawText "European University - Republic of Macedonia" ]
+                                div [ _class "date" ] [ rawText "2010 - 2013" ]
+                            ]
+
+                            div [ _class "subtitle" ] [ rawText "Bachelor of Software Engineering (B.SE.)" ]
+
+                            div [ _class "description" ] [
+                                p [] [ rawText "I built multiple applications while I was a student and did a ton of essays as additional learning material." ]
+                                p [] [ rawText "My graduation project was a web application for auctioning written in PHP. The purpose was to explain all of the technologies involved in building a web application, from designing the database to writing the back-end code." ]
                             ]
                         ]
                     ]
